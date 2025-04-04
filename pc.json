@@ -1,0 +1,7 @@
+{
+    "name": "my-awesome-project",
+    "type": "module",
+    "imports": {
+        "#*": "./src/*"
+    }
+}
