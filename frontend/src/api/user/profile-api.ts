@@ -1,5 +1,5 @@
 import axios  from "axios";
-import { UserInfo } from "../../ui-ux/perAccCp/Components/PersInfoForm";
+import { UserInfo } from "../../pages/AccPage/Windows/pages/components/PersInfoForm";
 
 
 export const loginApi = async ({loginoremail, password}:{loginoremail: string, password:string}) => {

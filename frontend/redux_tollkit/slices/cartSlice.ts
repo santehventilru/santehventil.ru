@@ -1,17 +1,20 @@
 import {createSlice} from "@reduxjs/toolkit"
+import { ProductsFavCart } from "@shared/type"
 
 
 interface cartInterFace{
     cartCount: number,
     productsID:number[],
     cartStatus:boolean
+    products:ProductsFavCart[]
     
 }
 
 const initialState : cartInterFace = {
     cartCount:0,
     productsID:[],
-    cartStatus:false
+    cartStatus:false,
+    products:[]
 }
 
 const cartSLice = createSlice({
@@ -36,9 +39,8 @@ const cartSLice = createSlice({
             }
         },
         setProductsID: (state, action) => {
-            // Проверяем, есть ли уже товар с таким ID в массиве
             if (!state.productsID.includes(action.payload)) {
-                state.productsID.push(action.payload);  // Добавляем товар только если его нет
+                state.productsID.push(action.payload); 
             }
         },
         setChangeCartStatus:(state, action) => {

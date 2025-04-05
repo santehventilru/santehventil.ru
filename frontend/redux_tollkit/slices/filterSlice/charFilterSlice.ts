@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
-import { FiltersArrInterface } from "../../../src/types/interface";
+import { FiltersArrInterface } from "@shared/widgets/Catalog/Filter/type";
 
 const initialState ={
     path:'',

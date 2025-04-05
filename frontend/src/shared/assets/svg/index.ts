@@ -1,11 +1,11 @@
-import SvgAcc from '@svgShared/SvgAcc'
-import SvgAdr from "@svgShared/SvgAdr"
-import SvgFav from "@svgShared/SvgFav"
-import SvgOrders from "@svgShared/SvgOrders"
-import SvgSup from "@svgShared/SvgSup"
-import SvgAdminOrder from '@svgShared/SvgAdminOrder'
-import SvgAdminService from '@svgShared/SvgAdminService'
-import SvgAdminUser from '@svgShared/SvgAdminUser'
+import SvgAcc from '@shared/assets/svg/SvgAcc'
+import SvgAdr from "@shared/assets/svg/SvgAdr"
+import SvgFav from "@shared/assets/svg/SvgFav"
+import SvgOrders from "@shared/assets/svg/SvgOrders"
+import SvgSup from "@shared/assets/svg/SvgSup"
+import SvgAdminOrder from '@shared/assets/svg/SvgAdminOrder'
+import SvgAdminService from '@shared/assets/svg/SvgAdminService'
+import SvgAdminUser from '@shared/assets/svg/SvgAdminUser'
 
 const TbasSvg = {
     SvgAcc,

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // "incremental": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -9,9 +10,13 @@
     "baseUrl": ".",
     "paths": {
       "@img/*": ["public/img/*"],
+      "@toolkit/*":["redux_tollkit/*"],
       "@reduxApi/*":["redux_tollkit/api/*"],
       "@reduxSlice/*":["redux_tollkit/slices/*"],
-      "@svgShared/*":["src/shared/assets/svg/*"],
+      "@api/*":["src/api/*"],
+      "@shared/*":["src/shared/*"],
+      "@funcCp/*":["src/funcCp/*"],
+      "@pages/*":["src/pages/*"]
 
     },
 

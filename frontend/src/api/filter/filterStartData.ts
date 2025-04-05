@@ -1,11 +1,11 @@
 import axios from "axios";
-import { FilterInfoResponse } from "../../types/interface";
-import {parseCategoryPath} from '../../funcHelper/ParseCategoryPath'
+// import { FilterInfoResponse } from "../../types/interface";
+import {parseCategoryPath} from '@shared/utils/ParseCategoryPath'
 
 // import React, {useParams} from "react";
 
 
-export const getFilterCategory = async (path: string): Promise<FilterInfoResponse | null> => {
+export const getFilterCategory = async (path: string): Promise<any | null> => {
     try {
         const res = await axios.get(`/api/categoriesInfo?categoryPath=${encodeURIComponent(path)}`);
         const data = res.data;

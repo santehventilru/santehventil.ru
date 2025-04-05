@@ -1,5 +1,5 @@
 import axios from "axios"
-import { FiltersArrInterface } from "../../types/interface";
+import { FiltersArrInterface } from "@shared/widgets/Catalog/Filter/type";;
 
 // export const getProductHit = async () =>{
 //     try {

@@ -1,11 +1,12 @@
-const  Pool  = require('pg').Pool;
+const { Pool } = require('pg');
 
-const pool = new Pool({ // Создаем пул соединений с базой данных PostgreSQL
-    user: "postgres",
-    password: "2541",
-    host: "localhost",
-    port: 5432,
-    database: "plumbing"
-  });
-  
-  module.exports = pool;
+// Строка подключения для локальной разработки и продакшн
+const connectionString = process.env.DATABASE_URL; 
+
+// Пул соединений для работы с базой данных
+const pool = new Pool({
+    connectionString: connectionString,
+    ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false // Включаем SSL для Render
+});
+
+module.exports = pool;

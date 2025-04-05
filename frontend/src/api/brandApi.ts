@@ -1,7 +1,7 @@
  
 import axios from "axios";
-import { FiltersArrInterface } from "../types/interface";
-import { parseCategoryPath } from "../funcHelper/ParseCategoryPath";
+import { FiltersArrInterface } from "@shared/widgets/Catalog/Filter/type";
+import { parseCategoryPath } from "@shared/utils/ParseCategoryPath";
 
 
 

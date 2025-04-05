@@ -1,16 +1,19 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
+import { ProductsFavCart } from '@shared/type';
 
 interface FavPr{
     favCount:number,
     favUpdate:boolean,
     favProducts:number[],
     favStatus:boolean,
+    favProductsArr:ProductsFavCart[]
 }
 
 const initialState: FavPr = {
     favCount:0,
     favUpdate:false, 
     favProducts:[],
+    favProductsArr:[],
     favStatus:false
 }
 
@@ -18,9 +21,9 @@ const favProductsSlice  = createSlice({
     name:'favProductsSlice',
     initialState,
     reducers:{
-        addToFav: (state, action: PayloadAction<{ prod: { product_id: number }[] }>) => {
+        addToFav: (state, action: PayloadAction<{ prod: ProductsFavCart[] }>) => {
             const { prod } = action.payload;
- 
+            state.favProductsArr = prod
             const newProductIds = prod.map(product => product.product_id)
             .filter(id => typeof id === "number" && Number.isFinite(id));
 

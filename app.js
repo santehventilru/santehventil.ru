@@ -11,7 +11,13 @@ const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
 const path = require('path');
 require('dotenv').config();
+const RedisStore = require('connect-redis')(session);
 const https = require('https')
+console.log("REDIS_URL:", process.env.REDIS_URL);
+
+const redisClient = require('./src/config/redisClient'); // Подключаем ранее созданный redisClient
+
+
 const brandRoutes = require('./src/routes/brandRoutes');
 const productRoutes = require('./src/routes/productRoutes');
 const deliveryRoutes = require('./src/routes/deliveryRoutes');
@@ -25,7 +31,7 @@ const deliveryInfoRoutes = require('./src/routes/staticRootes')
 /* const subCatalog = require('./src/routes/productRoutes'); */
 
 const app = express(); // Создаем экземпляр приложения Express
-
+app.set('trust proxy', 1);
 // Настройка EJS как шаблонизатора
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -38,14 +44,16 @@ app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: process.env.SESSION_SECRET, 
-  resave: false,
-  saveUninitialized: false,
-  cookie: { 
-    secure: false,
-    sameSite: 'strict' 
-  }
-}));
+    store: new RedisStore({ client: redisClient, logErrors: true }),
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: 'true',
+      sameSite: 'lax',
+      maxAge: 1000 * 60 * 60 * 24 // 1 день
+    }
+  }));
 
 app.use(helmet({
   contentSecurityPolicy: false // Настройте CSP отдельно при необходимости
