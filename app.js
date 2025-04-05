@@ -27,7 +27,6 @@ const favRoots = require('./src/routes/favRoots');
 const reviewRoutes = require('./src/routes/reviewRoutes');
 const profileRoutes = require('./src/routes/profileRoutes');
 const productPage = require('./src/routes/productRoutes');
-const deliveryInfoRoutes = require('./src/routes/staticRootes')
 /* const subCatalog = require('./src/routes/productRoutes'); */
 
 const app = express(); // Создаем экземпляр приложения Express
@@ -124,7 +123,6 @@ app.use('/', reviewRoutes);
 app.use('/', favRoots);
 app.use('/', profileRoutes);
 app.use('/', productPage);
-app.use('/', deliveryInfoRoutes);
 
 
 /**Static*/
