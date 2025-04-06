@@ -30,7 +30,15 @@ const productPage = require('./src/routes/productRoutes');
 /* const subCatalog = require('./src/routes/productRoutes'); */
 
 const app = express(); // Создаем экземпляр приложения Express
-app.set('trust proxy', 1);
+app.enable('trust proxy'); // Разрешаем доверять прокси Render
+
+app.use((req, res, next) => {
+  if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
+    next();
+  } else {
+    res.redirect(`https://${req.headers.host}${req.url}`);
+  }
+});
 // Настройка EJS как шаблонизатора
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -43,19 +51,25 @@ app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-    store: new RedisStore({ client: redisClient, logErrors: true }),
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      secure: 'true',
-      sameSite: 'lax',
-      maxAge: 1000 * 60 * 60 * 24 // 1 день
-    }
-  }));
+  store: new RedisStore({ client: redisClient, logErrors: true }),
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: true, // Только HTTPS
+    sameSite: 'none', // Для кросс-доменных запросов
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24
+  }
+}));
 
 app.use(helmet({
-  contentSecurityPolicy: false // Настройте CSP отдельно при необходимости
+  contentSecurityPolicy: false,
+  hsts: {
+    maxAge: 63072000, // 2 года
+    includeSubDomains: true,
+    preload: true
+  }
 }));
 
 const pathToDist = path.resolve(__dirname, 'frontend', 'dist');
@@ -141,7 +155,16 @@ app.use((err, req, res, next) => {
 });
 
 // Настройка CORS
-app.use(cors());
+app.use(cors({
+  origin: ['https://santehventil.ru', 'https://www.santehventil.ru'],
+  credentials: true
+}));
+
+app.use(express.static(pathToDist, {
+  setHeaders: (res) => {
+    res.set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
+  }
+}));
 app.get('*', (req, res) => {
   res.sendFile(path.join(pathToDist, 'index.html'));
 });
