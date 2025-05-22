@@ -31,14 +31,14 @@ const productPage = require('./src/routes/productRoutes');
 
 const app = express(); // Создаем экземпляр приложения Express
 app.enable('trust proxy'); // Разрешаем доверять прокси Render
-
-app.use((req, res, next) => {
-  if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
-    next();
-  } else {
-    res.redirect(`https://${req.headers.host}${req.url}`);
-  }
-});
+//TODO  раскомент при подключении htpps
+// app.use((req, res, next) => {
+//   if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
+//     next();
+//   } else {
+//     res.redirect(`https://${req.headers.host}${req.url}`);
+//   }
+// });
 // Настройка EJS как шаблонизатора
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
