@@ -56,12 +56,13 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false, // Только HTTPS// врменно false для http
-    sameSite: 'none', // Для кросс-доменных запросов
+    // В production (по https) включаем secure + sameSite:none
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24
   }
-}));
+}));;
 
 app.use(helmet({
   contentSecurityPolicy: false,
