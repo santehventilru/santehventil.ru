@@ -56,7 +56,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: true, // Только HTTPS
+    secure: false, // Только HTTPS// врменно false для http
     sameSite: 'none', // Для кросс-доменных запросов
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24
