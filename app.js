@@ -30,7 +30,7 @@ const productPage = require('./src/routes/productRoutes');
 /* const subCatalog = require('./src/routes/productRoutes'); */
 
 const app = express(); // Создаем экземпляр приложения Express
-app.enable('trust proxy'); // Разрешаем доверять прокси Render
+
 //TODO  раскомент при подключении htpps
 // app.use((req, res, next) => {
 //   if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
