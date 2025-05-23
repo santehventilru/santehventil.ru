@@ -77,15 +77,16 @@ const pathToDist = path.resolve(__dirname, 'frontend', 'dist');
 app.use(express.static(pathToDist));
 
 // Rate Limiting
-app.enable('trust proxy');
+app.set('trust proxy', 1);
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 минут
-  max: 1000, // Максимум 100 запросов с одного IP
+  windowMs: 15 * 60 * 1000,
+  max: 1000,
   message: 'Слишком много запросов с этого IP, попробуйте позже',
-  trustProxy: true
+  // И здесь тоже задаём то же самое число
+  trustProxy: 1
 });
-
 app.use(limiter);
+
 //Отправа данных на почту 
 const transporter = nodemailer.createTransport({
   service: 'mail', // Или другой используемый вами почтовый сервис
