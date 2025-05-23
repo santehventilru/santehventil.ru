@@ -77,11 +77,14 @@ const pathToDist = path.resolve(__dirname, 'frontend', 'dist');
 app.use(express.static(pathToDist));
 
 // Rate Limiting
+app.enable('trust proxy');
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 минут
   max: 1000, // Максимум 100 запросов с одного IP
-  message: 'Слишком много запросов с этого IP, попробуйте позже'
+  message: 'Слишком много запросов с этого IP, попробуйте позже',
+  trustProxy: true
 });
+
 app.use(limiter);
 //Отправа данных на почту 
 const transporter = nodemailer.createTransport({
@@ -89,6 +92,7 @@ const transporter = nodemailer.createTransport({
   auth: {
       user: 'ilya.pavlenkotio@mail.ru',
       pass: 'Gorillaz12' // Имейте в виду, что это небезопасно
+    
   }
 });
 
