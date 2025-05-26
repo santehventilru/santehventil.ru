@@ -13,7 +13,7 @@ const path = require('path');
 require('dotenv').config();
 const RedisStore = require('connect-redis')(session);
 const https = require('https')
-console.log("REDIS_URL:", process.env.REDIS_URL);
+
 
 const redisClient = require('./src/config/redisClient'); // Подключаем ранее созданный redisClient
 
