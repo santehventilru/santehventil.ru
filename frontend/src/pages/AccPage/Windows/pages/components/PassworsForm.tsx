@@ -3,20 +3,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { passwordValid } from "@shared/utils/valid";
 import { changePasswordApi } from "@api/user/profile-api";
+
+import { toast } from "react-toastify";
+
 import { useSelector } from "react-redux";
 import { RootState } from "@toolkit/store/store";
 import { useEffect } from "react";
-import { toast } from "react-toastify";
 
 export default function PasswordForm() {
-  const infoUserArray = useSelector((state: RootState) => state.autoriseSlice.userInfo);
 
-  const infoUser = infoUserArray.reduce((acc: Record<string, any>, item:{key:string, value:string}) => {
-    acc[item.key] = item.value;
-    return acc;
-  }, {});
-
-  const id = Number(infoUser["id"]);
+  const userData  = useSelector((st:RootState) => st.autoriseSlice.userInfo)
 
   const schema = z
     .object({
@@ -50,12 +46,16 @@ export default function PasswordForm() {
       } = useForm<z.infer<typeof schema>>({
         resolver: zodResolver(schema),
       });
+    
+  useEffect(() => {
+    setValue("id", userData.id)
+  },[setValue, userData])
       
 
   // Устанавливаем `id` при изменении пользователя
-  useEffect(() => {
-    setValue("id", id);
-  }, [id, setValue]);
+  // useEffect(() => {
+  //   setValue("id", id);
+  // }, [id, setValue]);
 
   const onSubmit: SubmitHandler<z.infer<typeof schema>> = async (data) => {
     try {

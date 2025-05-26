@@ -1,5 +1,5 @@
 import Avatar from '@img/porfil-foto.jpg'
-import Star from '@img/i-star.webp'
+import Star from '@img/i-star.png'
 
 
 export default function RewCard({login,rating,text,review_date}:{login:string, rating:string, text:string, review_date:string}){

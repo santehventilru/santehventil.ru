@@ -8,15 +8,15 @@ import apis from '../api/index'
 const persistConfig = {
     key: 'auth',
     storage,
+    whitelist:['autorisStatus']
+
 }
 const apiReducers = Object.fromEntries(
     Object.values(apis).map((api) => [[api.reducerPath], api.reducer])
 );
-
 const slicesReducers = Object.fromEntries(
     Object.values(slices).map((slice) => [ slice.name, slice.reducer])
-  );
-
+);
 const apiMiddleware = Object.values(apis).map((api) => api.middleware);
 
 const persistedReducer = persistReducer(persistConfig, autoriseSlice.reducer)
@@ -28,13 +28,14 @@ const store  = configureStore({
         ...apiReducers,   
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-        // serializableCheck: false,
+        serializableCheck: {
+            ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+            ignoredPaths: ['register', 'rehydrate'],
+          },
     }).concat(apiMiddleware)
 })
-
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export const persistor = persistStore(store)
-
 export default store

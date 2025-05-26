@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion"
-
+import logo from '../assets/logo-svg.svg'
 import { useEffect, useState } from "react"
 import {Link, useLocation, useNavigate} from 'react-router-dom'
 import HeaderShFrom from "../HeaderShFrom"
@@ -68,15 +68,15 @@ export default function MobailHeader({handelCart}:{handelCart:() => void}){
             
         <div className="wp-logo-mob" >
             <a href="/"  className="hd-logo">
-                <img src="/img/logo-svg.svg" alt="" className="svg-logo"/>   
+                <img src={logo} alt="logo" className="svg-logo"/>   
             </a>
         </div>
         
         <ul className="wp-nav-mob">
             <li className="haeder-burger header-burger-mob" onClick={handelDrop}>
-                <svg height="20" width="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Menu_Alt_05"> 
-                <path id="Vector" d="M5 17H13M5 12H19M11 7H19" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg height="20" width="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Menu_Alt_05"> 
+                <path id="Vector" d="M5 17H13M5 12H19M11 7H19" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 </path> 
                 </g> </g>
                 </svg>
@@ -120,9 +120,9 @@ export default function MobailHeader({handelCart}:{handelCart:() => void}){
                         
                         <button className="button button-login z-index-button-burger" onClick={opneAcc}>
                             <svg  className ="svg-login-grouр-header"  viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11 11C12.6569 11 14 9.65685 14 8C14 6.34315 12.6569 5 11 5C9.34315 5 8 6.34315 8 8C8 9.65685 9.34315 11 11 11Z" stroke="white" stroke-width="1.5"/>
-                                <path d="M16.9696 19C16.8105 16.1085 15.9252 14 11.0004 14C6.0757 14 5.1904 16.1085 5.03125 19" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                                <path className="rotating-path" d="M6 2.33782C7.47087 1.48697 9.1786 1 11 1C16.5228 1 21 5.47715 21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 9.1786 1.48697 7.47087 2.33782 6" stroke="#F6D863" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M11 11C12.6569 11 14 9.65685 14 8C14 6.34315 12.6569 5 11 5C9.34315 5 8 6.34315 8 8C8 9.65685 9.34315 11 11 11Z" stroke="white" strokeWidth="1.5"/>
+                                <path d="M16.9696 19C16.8105 16.1085 15.9252 14 11.0004 14C6.0757 14 5.1904 16.1085 5.03125 19" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                                <path className="rotating-path" d="M6 2.33782C7.47087 1.48697 9.1786 1 11 1C16.5228 1 21 5.47715 21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 9.1786 1.48697 7.47087 2.33782 6" stroke="#F6D863" strokeWidth="1.5" strokeLinecap="round"/>
                             </svg>       
                         </button>
                         
@@ -130,9 +130,9 @@ export default function MobailHeader({handelCart}:{handelCart:() => void}){
                         
                         : <button className="button button-login z-index-button-burger" onClick={handelOpenLogin}>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" className="svg-login"  xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.1592 10.1003H8.125"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M15.7207 7.66992L18.1607 10.0999L15.7207 12.5299"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M13.6328 6.35768C13.3578 3.37435 12.2411 2.29102 7.79948 2.29102C1.88198 2.29102 1.88198 4.21602 1.88198 9.99935C1.88198 15.7827 1.88198 17.7077 7.79948 17.7077C12.2411 17.7077 13.3578 16.6243 13.6328 13.641"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18.1592 10.1003H8.125"  strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M15.7207 7.66992L18.1607 10.0999L15.7207 12.5299"  strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M13.6328 6.35768C13.3578 3.37435 12.2411 2.29102 7.79948 2.29102C1.88198 2.29102 1.88198 4.21602 1.88198 9.99935C1.88198 15.7827 1.88198 17.7077 7.79948 17.7077C12.2411 17.7077 13.3578 16.6243 13.6328 13.641"  strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>         
                         </button> }
                         

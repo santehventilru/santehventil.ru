@@ -122,7 +122,7 @@ const  PorductCard =  React.memo(({product_id, name, price, main_image, sku, dis
                     <div className="text-cost">
                         <span itemProp="price">{Math.round(Number(final_price)).toLocaleString('ru')}₽</span>
                         <meta itemProp="priceCurrency" content="RUB"/>
-                        {saleNumber != 0 &&  <div className="old-price">${Math.round(Number(price)).toLocaleString('ru')}₽</div>}
+                        {saleNumber != 0 &&  <div className="old-price">{Math.round(Number(price)).toLocaleString('ru')}₽</div>}
                     </div>
                 </div>
             </article>

@@ -12,18 +12,15 @@ export default function ProdImageItem({add_image, changeImage, newImage}:{add_im
         setIsActive(false)
         changeImage(isIageUrl) 
         setImageUrl(newImage) 
-        // setIsActive(true)
 
         setTimeout(() => {
-            // changeImage(isIageUrl) // Меняем изображение после выхода
-            // setImageUrl(newImage) 
-            setIsActive(true) // Возвращаем элемент после смены изображения
+            setIsActive(true) 
         }, 700)
 
     }
 
 
-    return <AnimatePresence>
+    return <AnimatePresence mode="wait">
         {isAcitve && <motion.li id="1" className="dop-foto-prod-item" onClick={handelCkick}
         initial={{x:-300, opacity:0}}
         animate={{x:0, opacity:1}}

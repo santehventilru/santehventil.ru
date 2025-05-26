@@ -142,9 +142,9 @@ export default function AddressAndDeliveryForm(){
     
 
     return <div className="MakingOrder-stages-wp " id="PlaceAndMethod">
-                <img className="background-MakingOrder-stages" src="img/decor-making-order.webp" alt=""/>
-                <img className="background-MakingOrder-stages-center" src="img/delivir-center-img.webp" alt=""/>
-                <img className="background-MakingOrder-stages-bottom" src="img/diliviri-bottom-img.webp" alt=""/>
+                <img className="background-MakingOrder-stages" src="img/decor-making-order.png" alt=""/>
+                <img className="background-MakingOrder-stages-center" src="img/delivir-center-img.png" alt=""/>
+                <img className="background-MakingOrder-stages-bottom" src="img/diliviri-bottom-img.png" alt=""/>
                 
                 <div className="MakingOrder-heading-status-wp">
                     <h2 className="MakingOrder-heading-text">Место и способ доставки</h2>

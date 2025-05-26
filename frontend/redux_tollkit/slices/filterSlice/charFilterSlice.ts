@@ -6,7 +6,7 @@ const initialState ={
     selectedFilters: [] as FiltersArrInterface[], 
     filterActive: false,
     filterReset: false,
-    minPrice: 0 ,
+    minPrice:  0,
     maxPrice:0,
     windowSize:0,
     filterMobalWindow:false

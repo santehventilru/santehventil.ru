@@ -6,15 +6,11 @@ import { RootState } from "@toolkit/store/store"
 import SearchCard from "./ui/SearchCard"
 import { ProductCardInterface } from "@shared/widgets/Catalog/CatalogScroll/types"
 
-
-
-
 export interface SearchCard{
     product_id:number,
     name:string,
     productpath:string
 }
-
 
 export default function SearchPage(){
 

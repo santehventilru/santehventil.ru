@@ -77,7 +77,13 @@ export default function Tabs({loginStatus, product ,atr, rews}:TabsProps){
                                     <div className="tabs-panel-text-box"
                                     
                                     >
-                                        {product &&  product.description !== 'Описание не найдено'  ?  <PorductDescr description={product.description}/> : 'У товара отуствует описание'} 
+                                        {product &&  product.description !== 'Описание не найдено'  ?  <PorductDescr description={product.description}/> 
+                                        : <div style={{
+                                            alignSelf:'center',
+                                            display:'flex',
+                                            alignItems:'center',
+                                            justifyContent:'center'
+                                            }}>У товара отуствует описание</div>} 
                                     </div>
                                     
                                     }

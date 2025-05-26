@@ -6,12 +6,11 @@ import { AppDispatch, RootState } from '@toolkit/store/store'
 import CartNoItem from '../../ui/CartNoItem'
 import FavCard from './ui/FavCard'
 import { addToFav, minusFavPassive, plusFavActive, setFavCount, setToogleFav } from '@toolkit/slices/favProdSlice'
-
 import Api from '@api/apiService'
-// import { AddToCart } from '@shared/services/cartApi'
 import { plusCartCount } from '@toolkit/slices/cartSlice'
 import { toast } from 'react-toastify'
-// import { toggleFavoriteApi } from '@api/favApis'
+import { addToCartApi } from '@api/cart/cartApi'
+
 
 export default function FavModal(){
 
@@ -25,20 +24,24 @@ export default function FavModal(){
     const handelFav = () => dispatch(setToogleFav())
 
 
-    const AddToCart = (product_id:number) => {
-        Api.post('/api/addtocart', product_id)
-        .then(() => {
-            dispatch(plusCartCount())
-            toast.success('Товар добавлен в корзину')
-
-        }).catch(err => {
-            console.error('Error fetching cart data:', err)
-            toast.error("Ошибка добовления")
-
-        })
+    const AddToCart =  async (product_id:number) => {
+        try {
+            const res  = await addToCartApi(product_id)
+            if(res){
+                dispatch(plusCartCount())
+                toast.success('Товар добавлен в корзину')
+            }else{
+                toast.error('Ошибка добавления')
+            }
+        } catch (error) {
+            console.error('Error fetching cart data:', error);
+            return null;
+        }
     }  
      const toogleFav = (product_id:number) =>{
-        Api.post('/api/favorites/toggle', product_id)
+        Api.post('/api/favorites/toggle',{
+            product_id
+        })
         .then(() => {
             dispatch(plusFavActive())
         }).catch(err => console.error(err))
@@ -74,7 +77,7 @@ export default function FavModal(){
         >
         <div className="kozina-modal-wp">
             {favCount > 0 && productFav?.map((product:ProductsFavCart)  => <FavCard toogleFav={() => toogleFav(product.product_id)} AddToCart={() => AddToCart(product.product_id)} key={product.product_id} cartType={cartType} {...product}/>)}
-            {favCount === 0 && <CartNoItem/>}
+            {favCount === 0 && <CartNoItem text='Избранное пустое'/>}
             
         </div>
         <div className="buttons-korzina-wp" style={{justifyContent:'center'}}>

@@ -2,18 +2,20 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { postAutoSelectPlaceApi } from "@api/externalApi";
 import { Address } from "@pages/MakeOrderPage/components/AddresAndDeliv";
 import { toast } from "react-toastify";
-import { useChangeInfoMutation, useGetUserInfoQuery } from "@reduxApi/userApi";
+import { useChangeInfoMutation } from "@reduxApi/userApi";
+import { useSelector } from "react-redux";
+import { RootState } from "@toolkit/store/store";
 
 
 export default function AddressPage(){
-
+    const userData  = useSelector((st:RootState) => st.autoriseSlice.userInfo)
     const [address, setAddress1] = useState<string>('')
     const [profileID , setID ]  = useState()
     const input  = useRef<HTMLInputElement | null>(null)
     const [adressArr, setAddress] = useState([])
     const [focus, setFocus] = useState(false)
 
-    const {data = [], isSuccess, } = useGetUserInfoQuery('user')
+   
     const [changeInfo, {
             isSuccess: changeSuccess,
             isError:changError 
@@ -63,11 +65,9 @@ export default function AddressPage(){
     },[address])
 
     useEffect(() => {
-        if(isSuccess){
-            setAddress1(data[0].address || '')
-            setID(data[0].id)
-        }
-    },[isSuccess,data])
+            setAddress1(userData.address || '')
+            setID(userData.id)
+    },[userData])
 
     useEffect(() => {
         if(changeSuccess){

@@ -7,7 +7,9 @@ import {
     stringInputValidationNumber 
 } from "@shared/utils/valid";
 import {toast} from 'react-toastify'
-import { useChangeInfoMutation, useGetUserInfoQuery } from "@reduxApi/userApi";
+import { useChangeInfoMutation} from "@reduxApi/userApi";
+import { useSelector } from "react-redux";
+import { RootState } from "@toolkit/store/store";
 
 
 
@@ -32,6 +34,7 @@ interface Errors {
 
 
 export default function PersInfoForm() {
+    const userData  = useSelector((st:RootState) => st.autoriseSlice.userInfo)
     const [phone, setPhone] = useState<string>('');
     const [first_name, setName] = useState<string>('');
     const [last_name, setLastName] = useState<string>('');
@@ -40,8 +43,6 @@ export default function PersInfoForm() {
     const [errors, setErrors] = useState<Errors>({});
     const [id, setId] = useState<number>()
 
-    // const dispatch = useDispatch<AppDispatch>()
-    const {data = [], isSuccess, } = useGetUserInfoQuery('user')
     const [changeInfo, {
         isSuccess: changeSuccess,
         isError:changError 
@@ -102,15 +103,14 @@ export default function PersInfoForm() {
     },[changeSuccess, changError])
 
     useEffect(() => {
-        if (isSuccess) {
-            setPhone(data[0].phone || '');
-            setName(data[0].first_name || '');
-            setLastName(data[0].last_name || '');
-            setLogin(data[0].login || '');
-            setEmail(data[0].email || '');
-            setId(Number(data[0].id));
-        }
-    }, [isSuccess, data]);
+            setPhone(userData.phone || '');
+            setName(userData.first_name || '');
+            setLastName(userData.last_name || '');
+            setLogin(userData.login || '');
+            setEmail(userData.email || '');
+            setId(Number(userData.id));
+
+    }, [userData]);
 
     return (
         <div className="pers-info-item">

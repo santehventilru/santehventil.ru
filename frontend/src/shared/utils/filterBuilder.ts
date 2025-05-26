@@ -19,7 +19,7 @@ const FilterBuilder = ({
 
     const params = new URLSearchParams({
       categoryPath: encodeURIComponent(path),
-      limit: '16',
+      limit: '12',
       offset: String(offset || 0),
       sortBy: 'price',
       sortOrder: 'ASC',

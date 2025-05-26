@@ -62,7 +62,7 @@ export default function CreatePassForm(){
     // transition={{duration:0.3}}
     
     >
-    {/* <img className="background-MakingOrder-stages" src="img/decor-making-order.webp" alt=""/> */}
+    {/* <img className="background-MakingOrder-stages" src="img/decor-making-order.png" alt=""/> */}
     <div className="MakingOrder-heading-status-wp">
         <h2 className="MakingOrder-heading-text">Создание пароля</h2>
 

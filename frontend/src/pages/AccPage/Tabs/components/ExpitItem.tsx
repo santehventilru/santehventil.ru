@@ -3,7 +3,7 @@ import { logoutApi } from "@api/user/profile-api"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { AppDispatch } from "@toolkit/store/store"
-import { setStatus } from "@toolkit/slices/logRegSlice/autorisSlice"
+import { setStatus, setUserInfo } from "@toolkit/slices/logRegSlice/autorisSlice"
 // import { setAutoris, setRole, unsetUserInfo } from "../../../../redux_tollkit/slices/logRegSlice/autorisSlice"
 
 
@@ -23,6 +23,7 @@ export default function ExitItem(){
             const result  = await logoutApi()
             if(result){
                 dispatch(setStatus(false))
+                dispatch(setUserInfo({}))
                 navigate('/')
             }
         } catch (error) {

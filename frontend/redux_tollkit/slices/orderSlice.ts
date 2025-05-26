@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 interface Payload {
-    [key: string]: string | undefined;
+    [key: string]: string ;
 }
 
 const initialState = {

@@ -6,8 +6,8 @@ export default function SubNavHeader({handelClick, handleMouseLeave , handleMous
         <ul className="catatlog-list">
             <li ><Link to="/product/8-otoplenie" className="catalog-list--item" onClick={handelClick}>Отопление</Link></li>
             <li ><Link to="/product/5-santex" className="catalog-list--item" onClick={handelClick}>Сантехника</Link></li>
-            <li ><a href="/product/165-santex" className="catalog-list--item" onClick={handelClick}>Инструменты</a></li>
-            <li ><a href="/product/171-santex" className="catalog-list--item" onClick={handelClick}>Для дачи</a></li>
+            <li ><Link to="/product/165-santex" className="catalog-list--item" onClick={handelClick}>Инструменты</Link></li>
+            <li ><Link to="/product/171-santex" className="catalog-list--item" onClick={handelClick}>Для дачи</Link></li>
         </ul>
     </div>
  </div>

@@ -21,6 +21,16 @@ export interface OrderMoreInfoInterface{
     delivery_price?:string
 }
 
+export interface UserInfo {
+    first_name?: string;
+    last_name?: string;
+    login?: string;
+    email?: string;
+    phone?: string;
+    address?:string,
+    id?:number
+}
+
 export interface OrderProductInterface{
     filename:string,
     name:string,

@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
-import Loader from "@shared/ui/Loader";
 import Routes from "./Routes";
+import PageLoading from "@shared/components/PageLoading";
 
 
 
 export default function RouterApp(){
-    return <Suspense fallback={<Loader/>}>{useRoutes(Routes)}</Suspense>
+    return <Suspense fallback={<PageLoading/>}>{useRoutes(Routes)}</Suspense>
 }

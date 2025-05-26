@@ -81,11 +81,11 @@ export default function Article1(){
                             </p>
                             
                             <div className="bg-art-ph" style={{width:'40%', padding:'10px 0', boxSizing:'border-box', display:'flex', flexDirection:'column', gap:20}}>
-                                <img className="art-ph-size" style={{borderRadius:15, alignSelf:'start' , boxShadow:'inset 0px 0px 10px #000000;'}} src={'/img/acrticle1photo.webp'} alt="vanna"/>
+                                <img className="art-ph-size" style={{borderRadius:15, alignSelf:'start' , boxShadow:'inset 0px 0px 10px #000000;'}} src={'/img/acrticle1photo.png'} alt="vanna"/>
 
-                                <img className="art-ph-size" style={{borderRadius:15 , alignSelf:'end', boxShadow:'inset 0px 0px 10px #000000;'}} src={'/img/articlevanna2.webp'} alt="vanna"/>
+                                <img className="art-ph-size" style={{borderRadius:15 , alignSelf:'end', boxShadow:'inset 0px 0px 10px #000000;'}} src={'/img/articlevanna2.png'} alt="vanna"/>
 
-                                <img className="art-ph-size" style={{borderRadius:15, alignSelf:'start', boxShadow:'inset 0px 0px 10px #000000;' }} src={'/img/artvanna3.webp'} alt='vanna'/>
+                                <img className="art-ph-size" style={{borderRadius:15, alignSelf:'start', boxShadow:'inset 0px 0px 10px #000000;' }} src={'/img/artvanna3.png'} alt='vanna'/>
                             </div>
                             
 

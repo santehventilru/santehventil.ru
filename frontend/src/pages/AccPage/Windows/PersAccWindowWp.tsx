@@ -7,16 +7,18 @@ import OrdersPage from './pages/OrderaPage';
 import SupPage from './pages/SupPage';
 import AdminOrderMain from '@pages/AdminPage/components/AdminOrderMain';
 import AdminServiceMain from '@pages/AdminPage/components/AdiminServiceMain';
+import { RootState } from '@toolkit/store/store';
+
+
 // import AdminUserMain from '../Admin/AdminUserMain';
 
 
 export default function PersAccWindows(){
-    
 
-    const activeTab = useSelector((state:any) => state.categorTabsSlice.activeTabs)
+    const activeTab = useSelector((state:RootState) => state.categorTabsSlice.activeTabs)
 
     const tabs = [
-        { key: "acc", label: "Аккаунт", content: <AccPage/> },
+        { key: "acc", label: "Аккаунт", content: <AccPage /> },
         { key: "address", label: "Адреса", content: <AddressPage /> },
         { key: "fav", label: "Избранное", content: <FavPage /> },
         { key: "orders", label: "Заказы", content: <OrdersPage /> },
@@ -25,8 +27,6 @@ export default function PersAccWindows(){
         { key: "adminservice", label: "Все заявки на услуги", content: <AdminServiceMain/> },
         // { key: "adminuser", label: "Все пользователи", content: <AdminUserMain/> },
     ];
-
-
 
     return <div className="persAcc-data-wp">
 

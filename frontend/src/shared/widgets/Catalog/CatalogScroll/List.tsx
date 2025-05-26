@@ -8,9 +8,9 @@ const StickyList: React.FC<StickyListProps> = ({ children, loadMore, products,ha
 
     const rowCount = Math.ceil(products.length / itemsPerRow) + (hasMore ? 1 : 0);
 
-
+  
     return <List
-    
+      style={{scrollbarWidth:'none'}}
       itemData={{
         ItemRenderer: children,
         itemCount: rowCount,

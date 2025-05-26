@@ -77,11 +77,13 @@ export default function ModalCart(){
             >
             <div className="kozina-modal-wp">
                 {cartCount > 0 && products?.map(product => <CartCard key={product.product_id} cartType={cartType} {...product}/>)}
-                {cartCount === 0 && <CartNoItem/>}
+                {cartCount === 0 && <CartNoItem text="Корзина пуста"/>}
                 
             </div>
             <div className="buttons-korzina-wp">
-                <button className="button button-korzina"  id="making-btn" onClick={closeModel}>Оформить</button>
+                {
+                    cartCount > 0 && <button className="button button-korzina"  id="making-btn" onClick={closeModel}>Оформить</button>
+                }
                 <button className="button button-korzina" id="BasketClose" onClick={() => dispatch(setChangeCartStatus(!cartStatus))} >Закрыть</button>
                 <div className="total-price-wp">
                     <div className="total-basket-pirce-text">Общая сумма:</div>

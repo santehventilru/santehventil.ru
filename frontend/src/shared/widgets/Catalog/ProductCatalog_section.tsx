@@ -22,6 +22,7 @@ export default function ProductCatalogSection({ferstPath}:{ferstPath:string}) {
     const offset = useSelector((state:RootState) => state.catalogSlice.offset)
     const products = useSelector((state:RootState) => state.catalogSlice.visibleProducts)
     const cartRow = useSelector((state:RootState) => state.catalogSlice.cartRowCount)
+    // const cartSize  = useSelector((st:RootState) => st.catalogSlice.cartWidth)
     const stateActive = useSelector((state: RootState) => state.charFilterSlice.filterActive);
     const selectedFilters = useSelector((state: RootState) => state.charFilterSlice.selectedFilters);
     const windowSize  =  useSelector((state:RootState) => state.windowsSlice.windowSize)
@@ -39,7 +40,7 @@ export default function ProductCatalogSection({ferstPath}:{ferstPath:string}) {
         match = useMatch('/product/:catalog/*')
         path  = match?.params.catalog + (match?.params['*'] ? `/${match.params['*']}` : '');
     }else{
-        match = useMatch('/brand/:name/*')
+        match = useMatch('/catalog/brand/:name/*')
         console.log(match)
         path  =  (match?.params['*'] ? `/${match.params['*']}` : '');
     }
@@ -93,11 +94,14 @@ export default function ProductCatalogSection({ferstPath}:{ferstPath:string}) {
             setLoading(false);
         }
     }, []);
+    
 
     useEffect(() => {
         if(catalogRef?.current){
+            console.log(windowSize)
             let width  = catalogRef.current.offsetWidth
             setCatalog(width)
+            console.log(width)
         }
     }, [windowSize])
 

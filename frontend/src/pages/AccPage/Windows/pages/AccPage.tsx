@@ -4,6 +4,7 @@ import PersInfoFrom from "./components/PersInfoForm";
 import clsx from "clsx";
 import {motion, AnimatePresence} from 'framer-motion'
 
+
 export default function AccPage(){
 
 
@@ -41,7 +42,7 @@ export default function AccPage(){
             exit={{ x: "-100%", opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             >
-                <PersInfoFrom/>
+                <PersInfoFrom />
             </motion.div>}
 
             {activeTab === "password" && <motion.div
@@ -50,7 +51,7 @@ export default function AccPage(){
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}>
-                <PasswordForm/>
+                <PasswordForm />
             </motion.div>}
 
         </AnimatePresence>

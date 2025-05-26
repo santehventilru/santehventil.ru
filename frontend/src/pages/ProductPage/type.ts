@@ -20,3 +20,10 @@ export interface PorductFromProdPage{
     final_price:string,
     description: string, 
 }
+export interface ProductDataInterface{
+    categories:PorductItemWayInterface[]
+    productImages:ImageProductPage[]
+    product:PorductFromProdPage
+    attributes:AttributeProduct[]
+
+}

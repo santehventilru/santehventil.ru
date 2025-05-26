@@ -12,7 +12,6 @@ export interface questioListInterface{
     mainText:string
 }
 
-
 export interface ProductsFavCart{
     productImage:string
     productName:string

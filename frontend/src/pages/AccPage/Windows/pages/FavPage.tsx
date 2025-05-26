@@ -10,6 +10,7 @@ import Api from "@api/apiService";
 import { toast } from "react-toastify";
 import { plusCartCount } from "@toolkit/slices/cartSlice";
 import FavCard from "@shared/widgets/FavoriteModal/ui/FavCard";
+import { addToCartApi } from "@api/cart/cartApi";
 
 
 
@@ -24,20 +25,22 @@ export default function FavPage(){
     const cartType = 'no-modal'
     const dispatch = useDispatch<AppDispatch>()
 
-    const AddToCart = (product_id:number) => {
-        Api.post('/api/addtocart', product_id)
-        .then(() => {
-            dispatch(plusCartCount())
-            toast.success('Товар добавлен в корзину')
-
-        }).catch(err => {
-            console.error('Error fetching cart data:', err)
-            toast.error("Ошибка добовления")
-
-        })
-    }  
+    const AddToCart =  async (product_id:number) => {
+            try {
+                const res  = await addToCartApi(product_id)
+                if(res){
+                    dispatch(plusCartCount())
+                    toast.success('Товар добавлен в корзину')
+                }else{
+                    toast.error('Ошибка добавления')
+                }
+            } catch (error) {
+                console.error('Error fetching cart data:', error);
+                return null;
+            }
+        } 
      const toogleFav = (product_id:number) =>{
-        Api.post('/api/favorites/toggle', product_id)
+        Api.post('/api/favorites/toggle',{product_id})
         .then(() => {
             dispatch(plusFavActive())
         }).catch(err => console.error(err))
@@ -77,7 +80,7 @@ export default function FavPage(){
                       key={product.product_id}
                        cartType={cartType}
                         {...product}/>)}
-                    {favCount === 0 && <CartNoItem/>}
+                    {favCount === 0 && <CartNoItem text="Список пуст"/>}
                 </div>
             </div>
 }

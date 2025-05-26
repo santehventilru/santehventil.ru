@@ -40,8 +40,8 @@ export default function SubNavHeader2 (){
         <ul className="catatlog-list" style={{padding:20}}>
             <li ><Link to="/product/8-otoplenie" className="catalog-list--item">Отопление</Link></li>
             <li ><Link to="/product/5-santex" className="catalog-list--item">Сантехника</Link></li>
-            <li ><a href="/product/165-santex" className="catalog-list--item">Инструменты</a></li>
-            <li ><a href="/product/171-santex" className="catalog-list--item">Для дачи</a></li>
+            <li ><Link to="/product/165-santex" className="catalog-list--item">Инструменты</Link></li>
+            <li ><Link to="/product/171-santex" className="catalog-list--item">Для дачи</Link></li>
         </ul>
     </div>
  </div>

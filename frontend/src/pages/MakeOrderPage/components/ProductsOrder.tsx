@@ -57,7 +57,7 @@ export default function PordutsOrderForm({products}:{products:CartItemInertFace[
 
 
     return <div className="MakingOrder-stages-wp " id="ProductsInTheOrder">
-    <img className="background-MakingOrder-stages" src="img/decor-making-order.webp" alt=""/>
+    <img className="background-MakingOrder-stages" src="img/decor-making-order.png" alt=""/>
     <div className="MakingOrder-heading-status-wp">
         <h2 className="MakingOrder-heading-text ProductsInTheOrder-text-heading">Товары в заказе</h2>
 

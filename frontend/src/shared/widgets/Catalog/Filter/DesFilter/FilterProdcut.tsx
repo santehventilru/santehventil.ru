@@ -29,6 +29,7 @@ export default function FilterProduct(){
     const dispatch = useDispatch<AppDispatch>()
     const {name} = useParams()
     const brandID = name?.split('-')[0]
+    
 
 
     const filterPrice  = useSelector((state:RootState) => state.charFilterSlice.selectedFilters)
@@ -89,7 +90,6 @@ export default function FilterProduct(){
             newValues: number | number[],
           ) => {
             if (Array.isArray(newValues)) {
-            //   console.log("Выбрано:", newValues);
             }
     };
 

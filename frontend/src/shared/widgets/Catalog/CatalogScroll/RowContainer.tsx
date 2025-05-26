@@ -24,7 +24,8 @@ const ItemWrapper: React.FC<{
       }
       return groups;
     }, [products, itemsPerRow]);
-  
+
+    
     if (hasMore && index === productGroups.length) {
       return <InfiniteScroll loadMore={loadMore} style={style} />;
     }

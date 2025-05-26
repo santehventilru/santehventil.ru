@@ -1,11 +1,20 @@
+import { orderInterFace, UserInfo } from "@pages/AccPage/Windows/pages/type"
 import {createSlice} from "@reduxjs/toolkit"
 
+interface initialInterface{
+    autorisStatus:boolean
+    changeEvent:boolean
+    userInfo:UserInfo
+    userOrdersClosed:orderInterFace[]
+    userOrderCurrenet:orderInterFace[]
+}
 
-
-const initialState = {
+const initialState : initialInterface = {
     autorisStatus: false,
     // role:'',
-    // userInfo:[],
+    userInfo:{},
+    userOrdersClosed:[],
+    userOrderCurrenet:[],
     changeEvent:false
 
 }
@@ -28,6 +37,9 @@ const autoriseSlice  = createSlice({
         },
         setStatus:(st, ac) => {
             st.autorisStatus = ac.payload
+        },
+        setUserInfo:(st, ac) => {
+            st.userInfo = {...ac.payload}
         }
         // updateUser:(state) => {
         //     // const [key, value] = action.payload
@@ -40,6 +52,6 @@ const autoriseSlice  = createSlice({
     }
 })
 
-export const  {setStatus,  setChange} = autoriseSlice.actions
+export const  {setStatus,  setChange, setUserInfo} = autoriseSlice.actions
 
 export default autoriseSlice

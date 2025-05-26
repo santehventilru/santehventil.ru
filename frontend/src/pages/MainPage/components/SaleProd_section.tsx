@@ -21,7 +21,7 @@ export default function SaleProdSection(){
         <h2 className="text-title">Товары по скидке</h2>
         <div className="wraper-sale">
             <article className="advertisement-sale">
-                <img src="img/krenik-sale-img.webp" alt="" className="sale-img"/>
+                <img src="img/krenik-sale-img.png" alt="" className="sale-img"/>
                 <div className="wraper-sale--text">
                     <p className="text-contaner--sale">Выгодные предложения
                         продукции </p>
@@ -46,7 +46,7 @@ export default function SaleProdSection(){
         <h2 className="text-title">Товары по скидке</h2>
         <div className="wraper-sale">
             <article className="advertisement-sale">
-                <img src="img/krenik-sale-img.webp" alt="" className="sale-img"/>
+                <img src="img/krenik-sale-img.png" alt="" className="sale-img"/>
                 <div className="wraper-sale--text">
                     <p className="text-contaner--sale">Выгодные предложения
                         продукции </p>

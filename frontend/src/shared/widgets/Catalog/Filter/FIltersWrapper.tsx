@@ -10,7 +10,7 @@ import { FILTER_BREAKPOINT } from "@shared/constants/constants";
 
 export default function FiltersWrapper(){
 
-    const windowSize  =  useSelector((state:RootState) => state.windowsSlice.windowSize)
+    const windowSize  = useSelector((state:RootState) => state.windowsSlice.windowSize)
 
     const FilterCp = useMemo(() => {
         return windowSize > FILTER_BREAKPOINT

@@ -1,12 +1,13 @@
 import { RouteObject } from "react-router-dom";
 import { lazy} from "react";
 import { Guard } from './Guard/Components';
+
 const { ProtectedUser, ProtectedAdmin } = Guard;
 
 const Home = lazy(() => import('@pages/MainPage/Home'));
 const CatalogPage  = lazy(() => import('@pages/CatalogPage/Catalog'))
 const MakingPage = lazy(() => import('@pages/MakeOrderPage/MakingPage'))
-const ProductPage = lazy(() => import('@pages/ProductPage/ProductPage'))
+const ProductPage = lazy(() => import('@pages/ProductPage/ProdcutMain'))
 const SearchPage = lazy(() => import('@pages/SearchPage/Search'))
 const BrandPage = lazy(() => import('@pages/BrandPage/BrandPage'))
 const LoytuPage = lazy(() => import('@pages/LoyaltyPage/LouytPage'))
@@ -18,6 +19,7 @@ const ShearchCatalog = lazy(() => import('@pages/SearchPageCatalog/SearchCatalog
 const ShipInfo = lazy(() => import('@pages/InformationPage/ShippingInformation'))
 const Contacts = lazy(() => import('@pages/ConcatsPage/Contacts'))
 const AcrticlePage = lazy(() => import('@pages/acrticlePages/Acrticle1'))
+const ErrorMessage = lazy(() => import('@shared/ui/ErrorMessage'))
 // const PersAccUser = lazy(() => import('@funcCp/PersA/ccUser'))
 // const PersAccUser = lazy(() => import('@funcCp/PersAccUser'))
 
@@ -30,12 +32,13 @@ const Routes : RouteObject[]  = [
     { path:'/search',  element:<SearchPage/>},
     { path:'/brand',  element:<BrandPage/>},
     { path:'/loyaltyProg',  element:<LoytuPage/>},
-    { path:'/brand/:name/*',  element:<BrandCatalog/>},
+    { path:'/catalog/brand/:name/*',  element:<BrandCatalog/>},
     { path:'/errorPage',  element:<Page404/>},
     { path:'/search/:query',  element:<ShearchCatalog/>},
     { path:'/shippingInformation',  element:<ShipInfo/>},
     { path:'/contats',  element:<Contacts/>},
-    { path:'//article/:id',  element:<AcrticlePage/>},
+    { path:'/article/:id',  element:<AcrticlePage/>},
+    {path:'/loading', element:<ErrorMessage/>},
     
 
     {

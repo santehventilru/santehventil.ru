@@ -1,5 +1,5 @@
 import {createSlice,} from '@reduxjs/toolkit'
-import { findProductDuplicates } from '../../src/test'
+
 
 import { ProductCardInterface } from "@shared/widgets/Catalog/CatalogScroll/types";
 
@@ -14,7 +14,7 @@ interface catalogSliceInterface{
 const initialState: catalogSliceInterface = {
     offset:0,
     visibleProducts:[],
-    cartRowCount:0
+    cartRowCount:0,
 }
 
 const catalogSlice = createSlice({
@@ -26,16 +26,14 @@ const catalogSlice = createSlice({
             state.visibleProducts = []
         },
         setProducts:(state, action) => {
-            const res  = findProductDuplicates(action.payload)
-            console.log('Продукты на вход', res)
+            // const res  = findProductDuplicates(action.payload)
+            // console.log('Продукты на вход', res)
             state.visibleProducts = [...state.visibleProducts, ...action.payload]
-            const rer2 = findProductDuplicates(state.visibleProducts)
-            console.log('Продукты после проебразования',rer2)
-            state.offset +=16
+            // const rer2 = findProductDuplicates(state.visibleProducts)
+            // console.log('Продукты после проебразования',rer2)
+            state.offset +=12
         },
         setCartRowCount:(state, action) => {
-            let size  = action.payload
-            console.log(size)
             if(action.payload > 1199){
                 state.cartRowCount = 4
             }else if(action.payload > 750 && action.payload <= 1199){

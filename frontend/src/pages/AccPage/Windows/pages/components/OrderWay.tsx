@@ -33,7 +33,7 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
              <>
                  <p className="order-text-status order-text-status-active">собран</p>
                  <div className="order-step-img-wp order-step-img-wp-active">
-                     <img src="/img/step-1img.webp" alt="" className="step-img-size"/>
+                     <img src="/img/step-1img.png" alt="" className="step-img-size"/>
                      <div className="order-step-ready">
                          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" className="svg-ready-order" xmlns="http://www.w3.org/2000/svg">
                              <path fill-rule="evenodd" clip-rule="evenodd" d="M25 50C38.8072 50 50 38.8072 50 25C50 19.9072 48.4772 15.1701 45.8619 11.2192L25.9861 33.3036C24.0622 35.4414 20.8244 35.7572 18.5234 34.0314L9.44444 27.2222C8.21714 26.3017 7.96842 24.5606 8.88889 23.3333C9.80936 22.1061 11.5505 21.8572 12.7778 22.7778L21.8567 29.5869L42.2611 6.91542C37.7739 2.63103 31.6942 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8072 11.1929 50 25 50Z" fill="#7880B5"/>
@@ -44,9 +44,9 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
              
              : 
              <>
-                 <p className="order-text-status ">собирается</p>
+                 <p className="order-text-status ">в сборке</p>
                  <div className="order-step-img-wp ">
-                     <img src="/img/step-1img.webp" alt="" className="step-img-size"/>
+                     <img src="/img/step-1img.png" alt="" className="step-img-size"/>
                  </div>
              </>
              
@@ -64,7 +64,7 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
          <div className="order-step-2">
              {status === 'in-way' || status === 'order-close'   ?
              <>
-                 <p className="order-text-status order-text-status-active">доставляется
+                 <p className="order-text-status order-text-status-active">в доставке
                      <svg width="25" height="20" viewBox="0 0 25 20" fill="none" className="order-svg " xmlns="http://www.w3.org/2000/svg">
                          <path d="M23.2875 8.1875L21.375 5.3125C21.2606 5.13878 21.1047 4.99636 20.9213 4.89814C20.738 4.79991 20.533 4.749 20.325 4.75H16V2.25C16 1.91848 15.8683 1.60054 15.6339 1.36612C15.3995 1.1317 15.0815 1 14.75 1H2.25C1.91848 1 1.60054 1.1317 1.36612 1.36612C1.1317 1.60054 1 1.91848 1 2.25V14.75C1 15.0815 1.1317 15.3995 1.36612 15.6339C1.60054 15.8683 1.91848 16 2.25 16H4.75C4.75 15.337 5.01339 14.7011 5.48223 14.2322C5.95107 13.7634 6.58696 13.5 7.25 13.5C7.91304 13.5 8.54893 13.7634 9.01777 14.2322C9.48661 14.7011 9.75 15.337 9.75 16H17.25C17.25 15.337 17.5134 14.7011 17.9822 14.2322C18.4511 13.7634 19.087 13.5 19.75 13.5C20.413 13.5 21.0489 13.7634 21.5178 14.2322C21.9866 14.7011 22.25 15.337 22.25 16H23.5V8.875C23.4981 8.62996 23.4242 8.39088 23.2875 8.1875Z" fill="#7880B5"/>
                          <path d="M16 16V2.25C16 1.91848 15.8683 1.60054 15.6339 1.36612C15.3995 1.1317 15.0815 1 14.75 1H2.25C1.91848 1 1.60054 1.1317 1.36612 1.36612C1.1317 1.60054 1 1.91848 1 2.25V14.75C1 15.0815 1.1317 15.3995 1.36612 15.6339C1.60054 15.8683 1.91848 16 2.25 16H4.75C4.75 15.337 5.01339 14.7011 5.48223 14.2322C5.95107 13.7634 6.58696 13.5 7.25 13.5C7.91304 13.5 8.54893 13.7634 9.01777 14.2322C9.48661 14.7011 9.75 15.337 9.75 16H16ZM16 16V4.75H20.325C20.533 4.749 20.738 4.79991 20.9213 4.89814C21.1047 4.99636 21.2606 5.13878 21.375 5.3125L23.2875 8.1875C23.4242 8.39088 23.4981 8.62996 23.5 8.875V16H22.25C22.25 15.337 21.9866 14.7011 21.5178 14.2322C21.0489 13.7634 20.413 13.5 19.75 13.5C19.087 13.5 18.4511 13.7634 17.9822 14.2322C17.5134 14.7011 17.25 15.337 17.25 16H16Z" stroke="#FCF2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -72,7 +72,7 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
                      </svg>
                  </p>
                  <div className="order-step-img-wp order-step-img-wp-active">
-                     <img src="/img/ste-2img.webp" alt="" className="step-img-size"/>
+                     <img src="/img/ste-2img.png" alt="" className="step-img-size"/>
                      <div className="order-step-ready">
                          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" className="svg-ready-order" xmlns="http://www.w3.org/2000/svg">
                              <path fill-rule="evenodd" clip-rule="evenodd" d="M25 50C38.8072 50 50 38.8072 50 25C50 19.9072 48.4772 15.1701 45.8619 11.2192L25.9861 33.3036C24.0622 35.4414 20.8244 35.7572 18.5234 34.0314L9.44444 27.2222C8.21714 26.3017 7.96842 24.5606 8.88889 23.3333C9.80936 22.1061 11.5505 21.8572 12.7778 22.7778L21.8567 29.5869L42.2611 6.91542C37.7739 2.63103 31.6942 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8072 11.1929 50 25 50Z" fill="#7880B5"/>
@@ -82,7 +82,7 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
              </>
              : 
              <>
-                 <p className="order-text-status ">доставляется
+                 <p className="order-text-status ">доставка
                      <svg width="25" height="20" viewBox="0 0 25 20" fill="none" className="order-svg " xmlns="http://www.w3.org/2000/svg">
                          <path d="M23.2875 8.1875L21.375 5.3125C21.2606 5.13878 21.1047 4.99636 20.9213 4.89814C20.738 4.79991 20.533 4.749 20.325 4.75H16V2.25C16 1.91848 15.8683 1.60054 15.6339 1.36612C15.3995 1.1317 15.0815 1 14.75 1H2.25C1.91848 1 1.60054 1.1317 1.36612 1.36612C1.1317 1.60054 1 1.91848 1 2.25V14.75C1 15.0815 1.1317 15.3995 1.36612 15.6339C1.60054 15.8683 1.91848 16 2.25 16H4.75C4.75 15.337 5.01339 14.7011 5.48223 14.2322C5.95107 13.7634 6.58696 13.5 7.25 13.5C7.91304 13.5 8.54893 13.7634 9.01777 14.2322C9.48661 14.7011 9.75 15.337 9.75 16H17.25C17.25 15.337 17.5134 14.7011 17.9822 14.2322C18.4511 13.7634 19.087 13.5 19.75 13.5C20.413 13.5 21.0489 13.7634 21.5178 14.2322C21.9866 14.7011 22.25 15.337 22.25 16H23.5V8.875C23.4981 8.62996 23.4242 8.39088 23.2875 8.1875Z" fill="#7880B5"/>
                          <path d="M16 16V2.25C16 1.91848 15.8683 1.60054 15.6339 1.36612C15.3995 1.1317 15.0815 1 14.75 1H2.25C1.91848 1 1.60054 1.1317 1.36612 1.36612C1.1317 1.60054 1 1.91848 1 2.25V14.75C1 15.0815 1.1317 15.3995 1.36612 15.6339C1.60054 15.8683 1.91848 16 2.25 16H4.75C4.75 15.337 5.01339 14.7011 5.48223 14.2322C5.95107 13.7634 6.58696 13.5 7.25 13.5C7.91304 13.5 8.54893 13.7634 9.01777 14.2322C9.48661 14.7011 9.75 15.337 9.75 16H16ZM16 16V4.75H20.325C20.533 4.749 20.738 4.79991 20.9213 4.89814C21.1047 4.99636 21.2606 5.13878 21.375 5.3125L23.2875 8.1875C23.4242 8.39088 23.4981 8.62996 23.5 8.875V16H22.25C22.25 15.337 21.9866 14.7011 21.5178 14.2322C21.0489 13.7634 20.413 13.5 19.75 13.5C19.087 13.5 18.4511 13.7634 17.9822 14.2322C17.5134 14.7011 17.25 15.337 17.25 16H16Z" stroke="#FCF2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -90,14 +90,14 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
                      </svg>
                  </p>
                  <div className="order-step-img-wp ">
-                     <img src="/img/ste-2img.webp" alt="" className="step-img-size"/>
+                     <img src="/img/ste-2img.png" alt="" className="step-img-size"/>
                  </div>
              </>
              }  
              
          </div>
          <div className="order-line-wp">
-             <div className="order-line-way">заказ уже едет
+             <div className="order-line-way">в пути
                  <svg width="25" height="20" viewBox="0 0 25 20" fill="none" className={status ==='in-way' ? 'order-svg order-svg-active' : 'order-svg'} xmlns="http://www.w3.org/2000/svg">
                      <path d="M23.2875 8.1875L21.375 5.3125C21.2606 5.13878 21.1047 4.99636 20.9213 4.89814C20.738 4.79991 20.533 4.749 20.325 4.75H16V2.25C16 1.91848 15.8683 1.60054 15.6339 1.36612C15.3995 1.1317 15.0815 1 14.75 1H2.25C1.91848 1 1.60054 1.1317 1.36612 1.36612C1.1317 1.60054 1 1.91848 1 2.25V14.75C1 15.0815 1.1317 15.3995 1.36612 15.6339C1.60054 15.8683 1.91848 16 2.25 16H4.75C4.75 15.337 5.01339 14.7011 5.48223 14.2322C5.95107 13.7634 6.58696 13.5 7.25 13.5C7.91304 13.5 8.54893 13.7634 9.01777 14.2322C9.48661 14.7011 9.75 15.337 9.75 16H17.25C17.25 15.337 17.5134 14.7011 17.9822 14.2322C18.4511 13.7634 19.087 13.5 19.75 13.5C20.413 13.5 21.0489 13.7634 21.5178 14.2322C21.9866 14.7011 22.25 15.337 22.25 16H23.5V8.875C23.4981 8.62996 23.4242 8.39088 23.2875 8.1875Z" fill="#7880B5"/>
                      <path d="M16 16V2.25C16 1.91848 15.8683 1.60054 15.6339 1.36612C15.3995 1.1317 15.0815 1 14.75 1H2.25C1.91848 1 1.60054 1.1317 1.36612 1.36612C1.1317 1.60054 1 1.91848 1 2.25V14.75C1 15.0815 1.1317 15.3995 1.36612 15.6339C1.60054 15.8683 1.91848 16 2.25 16H4.75C4.75 15.337 5.01339 14.7011 5.48223 14.2322C5.95107 13.7634 6.58696 13.5 7.25 13.5C7.91304 13.5 8.54893 13.7634 9.01777 14.2322C9.48661 14.7011 9.75 15.337 9.75 16H16ZM16 16V4.75H20.325C20.533 4.749 20.738 4.79991 20.9213 4.89814C21.1047 4.99636 21.2606 5.13878 21.375 5.3125L23.2875 8.1875C23.4242 8.39088 23.4981 8.62996 23.5 8.875V16H22.25C22.25 15.337 21.9866 14.7011 21.5178 14.2322C21.0489 13.7634 20.413 13.5 19.75 13.5C19.087 13.5 18.4511 13.7634 17.9822 14.2322C17.5134 14.7011 17.25 15.337 17.25 16H16Z" stroke="#FCF2F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -112,7 +112,7 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
                  <>
                      <p className="order-text-status order-text-status-active">закрыт</p>
                      <div className="order-step-img-wp order-step-img-wp-active">
-                         <img src="/img/step-3img.webp" alt="" className="step-img-size"/>
+                         <img src="/img/step-3img.png" alt="" className="step-img-size"/>
                          <div className="order-step-ready">
                              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" className="svg-ready-order" xmlns="http://www.w3.org/2000/svg">
                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M25 50C38.8072 50 50 38.8072 50 25C50 19.9072 48.4772 15.1701 45.8619 11.2192L25.9861 33.3036C24.0622 35.4414 20.8244 35.7572 18.5234 34.0314L9.44444 27.2222C8.21714 26.3017 7.96842 24.5606 8.88889 23.3333C9.80936 22.1061 11.5505 21.8572 12.7778 22.7778L21.8567 29.5869L42.2611 6.91542C37.7739 2.63103 31.6942 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8072 11.1929 50 25 50Z" fill="#7880B5"/>
@@ -124,7 +124,7 @@ export default function OrderWay ({status,delivery_price,totalPrice}:{status:str
                  <>
                      <p className="order-text-status ">ждет вас</p>
                      <div className="order-step-img-wp ">
-                         <img src="/img/step-3img.webp" alt="" className="step-img-size"/>
+                         <img src="/img/step-3img.png" alt="" className="step-img-size"/>
                      </div>
                  </>
                  }
