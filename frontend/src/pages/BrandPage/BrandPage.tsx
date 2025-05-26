@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+
 
 import BrandCard from "./ui/BrandCard"
 import { useGetBrandsQuery } from "@reduxApi/brandsApi"

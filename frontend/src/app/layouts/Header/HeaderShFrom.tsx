@@ -3,7 +3,7 @@ import { AppDispatch } from "@toolkit/store/store"
 import {  useRef } from "react"
 import { setSearchQuery } from "@toolkit/slices/searchSlice"
 import { useNavigate } from "react-router-dom"
-import cross from'./assets/SearchCross.svg'
+
 
 export default function HeaderShFrom(){
 

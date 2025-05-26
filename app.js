@@ -30,7 +30,7 @@ const productPage = require('./src/routes/productRoutes');
 /* const subCatalog = require('./src/routes/productRoutes'); */
 
 const app = express(); // Создаем экземпляр приложения Express
-app.enable('trust proxy'); // Разрешаем доверять прокси Render
+
 //TODO  раскомент при подключении htpps
 // app.use((req, res, next) => {
 //   if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
@@ -56,12 +56,13 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: true, // Только HTTPS
-    sameSite: 'none', // Для кросс-доменных запросов
+    // В production (по https) включаем secure + sameSite:none
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24
   }
-}));
+}));;
 
 app.use(helmet({
   contentSecurityPolicy: false,
@@ -77,18 +78,23 @@ const pathToDist = path.resolve(__dirname, 'frontend', 'dist');
 app.use(express.static(pathToDist));
 
 // Rate Limiting
+app.set('trust proxy', 1);
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 минут
-  max: 1000, // Максимум 100 запросов с одного IP
-  message: 'Слишком много запросов с этого IP, попробуйте позже'
+  windowMs: 15 * 60 * 1000,
+  max: 1000,
+  message: 'Слишком много запросов с этого IP, попробуйте позже',
+  // И здесь тоже задаём то же самое число
+  trustProxy: 1
 });
 app.use(limiter);
+
 //Отправа данных на почту 
 const transporter = nodemailer.createTransport({
   service: 'mail', // Или другой используемый вами почтовый сервис
   auth: {
       user: 'ilya.pavlenkotio@mail.ru',
       pass: 'Gorillaz12' // Имейте в виду, что это небезопасно
+    
   }
 });
 

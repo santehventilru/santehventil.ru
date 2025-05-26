@@ -74,7 +74,7 @@ export default function PordutsOrderForm({products}:{products:CartItemInertFace[
             <div className="inputs-makingOrder-main-container-basket">
                 
                 {cartCount > 0 && products?.map(product => <CartCard key={product.product_id} cartType={cartType} {...product}/>)}
-                {cartCount === 0 && <CartNoItem/>}
+                {cartCount === 0 && <CartNoItem text="Нет товаров"/>}
                 
             </div>
 

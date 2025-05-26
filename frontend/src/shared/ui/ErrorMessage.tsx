@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react"
 
-interface Options{
-    keyframes:Keyframe[]
-    options:KeyframeAnimationOptions
-}
+// interface Options{
+//     keyframes:Keyframe[]
+//     options:KeyframeAnimationOptions
+// }
 export default function ErrorMessage(){
     const blocks = useRef<(SVGRectElement | null)[]>([]);
 

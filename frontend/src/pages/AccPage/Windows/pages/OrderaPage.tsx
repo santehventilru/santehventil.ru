@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useGetUserInfoQuery, useLazyGetUserOrderQuery } from "@reduxApi/userApi";
 import OrderData from "./components/OrderData";
 
