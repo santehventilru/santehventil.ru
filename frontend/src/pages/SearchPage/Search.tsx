@@ -105,15 +105,15 @@ export default function SearchPage(){
                 </div>
                 {/* окновы вывод начальной продукиции рекомендованные товары */}
 
-                {fesrt?.length > 0  && <ShDefList products={fesrt} haederText="Лучшие товары "/>}
+{/*                 {fesrt?.length > 0  && <ShDefList products={fesrt} haederText="Лучшие товары "/>}
                 {second?.length  > 0 && <ShDefList products={second} haederText="Самые лучшие товары "/>}
                 <div>
                     Вывод рекомендоваций 
                 </div>
-                {/* окно вывода списка реоменлованных брендов */}
+                {/* окно вывода списка реоменлованных брендов 
                 <div>
                     Список рекомендованные бренды
-                </div>
+                </div> */}
             </div>
         </section>
     </>
