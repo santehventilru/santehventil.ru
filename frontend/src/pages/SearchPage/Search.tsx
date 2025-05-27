@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react"
-import ShDefList from "./components/ShDefListWp"
-import { getPopulatProdutsApi, getPopulatProdutsApi2, getSeachResultApi } from "@api/searchApi"
+// import ShDefList from "./components/ShDefListWp"
+import { getSeachResultApi } from "@api/searchApi"
 import { useSelector } from "react-redux"
 import { RootState } from "@toolkit/store/store"
 import SearchCard from "./ui/SearchCard"
@@ -14,8 +14,8 @@ export interface SearchCard{
 
 export default function SearchPage(){
 
-    const [fesrt, setFerst] = useState<ProductCardInterface[]>([])
-    const [second, setSecond] = useState<ProductCardInterface[]>([])
+    // const [fesrt, setFerst] = useState<ProductCardInterface[]>([])
+    // const [second, setSecond] = useState<ProductCardInterface[]>([])
     const [shProd, setShProd] = useState<SearchCard[]>()
     const [noprod, setNoprod] = useState<string | boolean>(false)
     // const [brands, setBrands] = useState<[]>()
