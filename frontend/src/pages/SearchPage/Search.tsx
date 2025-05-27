@@ -24,30 +24,30 @@ export default function SearchPage(){
     const searchQuery  = useSelector((state:RootState) => state.shearchSlice.searchQuery)
 
 
-    const getBeginnInfoPrducts = async () => {
-        try {
-            const result = await getPopulatProdutsApi()
-            if(result){
-                setFerst(result)
-            }
-            return false
-        } catch (error) {
-            return false
-        }
-    }
+    // const getBeginnInfoPrducts = async () => {
+    //     try {
+    //         const result = await getPopulatProdutsApi()
+    //         if(result){
+    //             setFerst(result)
+    //         }
+    //         return false
+    //     } catch (error) {
+    //         return false
+    //     }
+    // }
 
 
-    const getBeginnInfoPrducts2 = async () => {
-        try {
-            const result = await getPopulatProdutsApi2()
-            if(result){
-                setSecond(result)
-            }
-            return false
-        } catch (error) {
-            return false
-        }
-    }
+    // const getBeginnInfoPrducts2 = async () => {
+    //     try {
+    //         const result = await getPopulatProdutsApi2()
+    //         if(result){
+    //             setSecond(result)
+    //         }
+    //         return false
+    //     } catch (error) {
+    //         return false
+    //     }
+    // }
 
     const getResultSearch = useCallback(async  () => {
         if(searchQuery.length > 3){
@@ -84,10 +84,10 @@ export default function SearchPage(){
     //     }
     // }
 
-    useEffect(() => {
-        getBeginnInfoPrducts()
-        getBeginnInfoPrducts2()
-    },[])
+    // useEffect(() => {
+    //     getBeginnInfoPrducts()
+    //     getBeginnInfoPrducts2()
+    // },[])
 
     useEffect(() => {
         getResultSearch()
