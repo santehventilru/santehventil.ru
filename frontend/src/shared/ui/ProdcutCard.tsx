@@ -49,7 +49,7 @@ const  PorductCard =  React.memo(({product_id, name, price, main_image, sku, dis
                 <meta itemProp="sku" content={sku}/>
                 
                 <div className="cart catalog-cart">
-                    <InnerCardNav product_id={product_id} url={`productpage/${product_id}/${productPath}/${nameEn}`}/>
+                    <InnerCardNav product_id={product_id} url={`/productpage/${product_id}/${productPath}/${nameEn}`}/>
 
                     
                     {Number(disc) != 0 ? 
